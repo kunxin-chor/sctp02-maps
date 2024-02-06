@@ -70,6 +70,23 @@ document.addEventListener("DOMContentLoaded", async function () {
     // second parameter: overlay layers
     L.control.layers(baseLayers, overlayLayers).addTo(map);
 
+    document.querySelector("#showBlueCircles").addEventListener("click", function(){
+        map.addLayer(blueCircleLayer);
+    })
+
+    document.querySelector("#hideBlueCircles").addEventListener("click", function(){
+        map.removeLayer(blueCircleLayer);
+    })
+
+    document.querySelector("#toggleBlueCircles").addEventListener("click", function(){
+        // we can check if a layer is in a map but using the hasLayer function
+        if (map.hasLayer(blueCircleLayer)) {
+            map.removeLayer(blueCircleLayer)
+        } else {
+            map.addLayer(blueCircleLayer)
+        }
+    })
+
 });
 
 function getRandomLatLng(map) {
