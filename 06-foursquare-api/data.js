@@ -5,12 +5,13 @@ async function search(lat, lng, searchTerms) {
             ll: lat + "," + lng,
             // categories:"13033",  // enable use of categories
             sort:"DISTANCE",
-            radius: 2000,
+            radius: 5000,
             limit: 50
 
         },
         headers: {
             Accept: "application/json",
+            // Provide the API key here
             Authorization: 'fsq32JqRqo6AHKIhCP2yosAeYOhHUDuoLuKTfgsOQmhStCY='
         }
     })
